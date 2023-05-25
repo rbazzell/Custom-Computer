@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Robot">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Robot|Display_mux:inst16|LPM_MUX:lpm_mux_component" CBX_FILE_NAME="mux_vld.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Robot|mux4to1:inst15|LPM_MUX:lpm_mux_component" CBX_FILE_NAME="mux_sld.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Robot|Big_Count:inst9|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_09h.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Robot|Display_Count:inst14|lpm_counter:lpm_counter_component" CBX_FILE_NAME="cntr_f7h.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Robot|decode2to4:inst19|lpm_decode:lpm_decode_component" CBX_FILE_NAME="decode_ndf.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
