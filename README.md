@@ -9,7 +9,7 @@ Materials
 - Breadboard to manage connection
 
 Software
-- Visual Studio Code (With Arduino Extension)
+- Arduino IDE 2.1.0
 - ALTERA Quartus II
 - CEDARLogic
 
