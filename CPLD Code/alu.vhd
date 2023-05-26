@@ -16,7 +16,7 @@ architecture rtl of alu is
 	signal sum     : unsigned(16 downto 0);
 begin
 	sum <= ('0' & ac) + ('0' & dr);
-	process -- muxes
+	process(control) -- muxes
 	begin
 		case control is
 			when "001" => 
@@ -39,7 +39,7 @@ begin
 		end case;
 	end process;
 	
-	process -- control_logic
+	process(ADD, AND_en, LDA, CMA, INP, CIR, CIL) -- control_logic
 	begin
 		if (ADD = '1') then control <= o"7";
 		elsif (AND_en = '1') then control <= o"6";

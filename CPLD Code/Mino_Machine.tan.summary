@@ -1,0 +1,66 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 0.874 ns
+From           : Button_2
+To             : inst3
+From Clock     : --
+To Clock       : Clk_50MHZ
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 17.645 ns
+From           : Display_Count:inst14|lpm_counter:lpm_counter_component|cntr_f7h:auto_generated|safe_q[0]
+To             : Seg_E
+From Clock     : Clk_50MHZ
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 62.304 ns
+From           : a[0]
+To             : c[7]
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 0.060 ns
+From           : Button_1
+To             : inst3
+From Clock     : --
+To Clock       : Clk_50MHZ
+Failed Paths   : 0
+
+Type           : Clock Setup: 'Clk_50MHZ'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 229.73 MHz ( period = 4.353 ns )
+From           : Clock_Divider:inst26|lpm_counter:lpm_counter_component|cntr_09h:auto_generated|safe_q[0]
+To             : Clock_Divider:inst26|lpm_counter:lpm_counter_component|cntr_09h:auto_generated|safe_q[5]
+From Clock     : Clk_50MHZ
+To Clock       : Clk_50MHZ
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

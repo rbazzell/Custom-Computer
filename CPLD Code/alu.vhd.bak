@@ -24,7 +24,7 @@ begin
 			when "010" =>
 				ac_in <= e & ac(15 downto 1);
 			when "011" =>
-				ac_in <= inr
+				ac_in <= inr;
 			when "100" =>
 				ac_in <= not ac;
 			when "101" =>

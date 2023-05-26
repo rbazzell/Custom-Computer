@@ -66,27 +66,27 @@ CHIP  "Mino_Machine"  ASSIGNED TO AN: EPM240T100C5
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
-GND*                         : 1         :        :                   :         : 2         :                
-GND*                         : 2         :        :                   :         : 1         :                
-GND*                         : 3         :        :                   :         : 1         :                
-GND*                         : 4         :        :                   :         : 1         :                
-GND*                         : 5         :        :                   :         : 1         :                
-GND*                         : 6         :        :                   :         : 1         :                
-GND*                         : 7         :        :                   :         : 1         :                
-GND*                         : 8         :        :                   :         : 1         :                
+Bus[13]                      : 1         : bidir  : 3.3-V LVCMOS      :         : 2         : Y              
+Bus[15]                      : 2         : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
+Bus[14]                      : 3         : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
+Bus_Control                  : 4         : output : 3.3-V LVCMOS      :         : 1         : Y              
+c[7]                         : 5         : output : 3.3-V LVTTL       :         : 1         : N              
+Bus[10]                      : 6         : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
+Bus[11]                      : 7         : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
+Bus[8]                       : 8         : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
 VCCIO1                       : 9         : power  :                   : 3.3V    : 1         :                
 GNDIO                        : 10        : gnd    :                   :         :           :                
 GNDINT                       : 11        : gnd    :                   :         :           :                
-GND*                         : 12        :        :                   :         : 1         :                
+Bus[9]                       : 12        : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
 VCCINT                       : 13        : power  :                   : 2.5V/3.3V :           :                
-GND*                         : 14        :        :                   :         : 1         :                
-GND*                         : 15        :        :                   :         : 1         :                
-data0                        : 16        : input  : 3.3-V LVCMOS      :         : 1         : Y              
-data1                        : 17        : input  : 3.3-V LVCMOS      :         : 1         : Y              
-data2                        : 18        : input  : 3.3-V LVCMOS      :         : 1         : Y              
-data3                        : 19        : input  : 3.3-V LVCMOS      :         : 1         : Y              
-GND*                         : 20        :        :                   :         : 1         :                
-GND*                         : 21        :        :                   :         : 1         :                
+Bus[6]                       : 14        : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
+Bus[7]                       : 15        : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
+Bus[4]                       : 16        : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
+Bus[5]                       : 17        : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
+Bus[2]                       : 18        : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
+Bus[3]                       : 19        : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
+Bus[0]                       : 20        : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
+Bus[1]                       : 21        : bidir  : 3.3-V LVCMOS      :         : 1         : Y              
 TMS                          : 22        : input  :                   :         : 1         :                
 TDI                          : 23        : input  :                   :         : 1         :                
 TCK                          : 24        : input  :                   :         : 1         :                
@@ -113,20 +113,20 @@ Digit_1                      : 44        : output : 3.3-V LVCMOS      :         
 VCCIO1                       : 45        : power  :                   : 3.3V    : 1         :                
 GNDIO                        : 46        : gnd    :                   :         :           :                
 Seg_B                        : 47        : output : 3.3-V LVCMOS      :         : 1         : Y              
-GND*                         : 48        :        :                   :         : 1         :                
+c[2]                         : 48        : output : 3.3-V LVTTL       :         : 1         : N              
 GND*                         : 49        :        :                   :         : 1         :                
-GND*                         : 50        :        :                   :         : 1         :                
+a[7]                         : 50        : input  : 3.3-V LVTTL       :         : 1         : N              
 CDS_Cell                     : 51        : input  : 3.3V Schmitt Trigger Input :         : 1         : Y              
-GND*                         : 52        :        :                   :         : 2         :                
-GND*                         : 53        :        :                   :         : 2         :                
+c[4]                         : 52        : output : 3.3-V LVTTL       :         : 2         : N              
+a[0]                         : 53        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : 54        :        :                   :         : 2         :                
-GND*                         : 55        :        :                   :         : 2         :                
-GND*                         : 56        :        :                   :         : 2         :                
-GND*                         : 57        :        :                   :         : 2         :                
-GND*                         : 58        :        :                   :         : 2         :                
+a[2]                         : 55        : input  : 3.3-V LVTTL       :         : 2         : N              
+c[6]                         : 56        : output : 3.3-V LVTTL       :         : 2         : N              
+a[3]                         : 57        : input  : 3.3-V LVTTL       :         : 2         : N              
+a[5]                         : 58        : input  : 3.3-V LVTTL       :         : 2         : N              
 VCCIO2                       : 59        : power  :                   : 3.3V    : 2         :                
 GNDIO                        : 60        : gnd    :                   :         :           :                
-GND*                         : 61        :        :                   :         : 2         :                
+c[1]                         : 61        : output : 3.3-V LVTTL       :         : 2         : N              
 LED_Left                     : 62        : output : 3.3-V LVTTL       :         : 2         : Y              
 VCCINT                       : 63        : power  :                   : 2.5V/3.3V :           :                
 Clk_50MHZ                    : 64        : input  : 3.3-V LVCMOS      :         : 2         : Y              
@@ -135,26 +135,26 @@ LED_Center                   : 66        : output : 3.3-V LVTTL       :         
 Dip[2]                       : 67        : input  : 3.3-V LVCMOS      :         : 2         : Y              
 LED_Right                    : 68        : output : 3.3-V LVTTL       :         : 2         : Y              
 Dip[1]                       : 69        : input  : 3.3-V LVCMOS      :         : 2         : Y              
-GND*                         : 70        :        :                   :         : 2         :                
+a[4]                         : 70        : input  : 3.3-V LVTTL       :         : 2         : N              
 Dip[0]                       : 71        : input  : 3.3-V LVCMOS      :         : 2         : Y              
-GND*                         : 72        :        :                   :         : 2         :                
+c[5]                         : 72        : output : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : 73        :        :                   :         : 2         :                
-GND*                         : 74        :        :                   :         : 2         :                
-GND*                         : 75        :        :                   :         : 2         :                
+b[4]                         : 74        : input  : 3.3-V LVTTL       :         : 2         : N              
+b[3]                         : 75        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : 76        :        :                   :         : 2         :                
 GND*                         : 77        :        :                   :         : 2         :                
-GND*                         : 78        :        :                   :         : 2         :                
+b[5]                         : 78        : input  : 3.3-V LVTTL       :         : 2         : N              
 GNDIO                        : 79        : gnd    :                   :         :           :                
 VCCIO2                       : 80        : power  :                   : 3.3V    : 2         :                
-GND*                         : 81        :        :                   :         : 2         :                
+b[0]                         : 81        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : 82        :        :                   :         : 2         :                
-GND*                         : 83        :        :                   :         : 2         :                
-GND*                         : 84        :        :                   :         : 2         :                
+b[6]                         : 83        : input  : 3.3-V LVTTL       :         : 2         : N              
+b[2]                         : 84        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : 85        :        :                   :         : 2         :                
-GND*                         : 86        :        :                   :         : 2         :                
-GND*                         : 87        :        :                   :         : 2         :                
-GND*                         : 88        :        :                   :         : 2         :                
-GND*                         : 89        :        :                   :         : 2         :                
+a[1]                         : 86        : input  : 3.3-V LVTTL       :         : 2         : N              
+b[7]                         : 87        : input  : 3.3-V LVTTL       :         : 2         : N              
+a[6]                         : 88        : input  : 3.3-V LVTTL       :         : 2         : N              
+c[3]                         : 89        : output : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : 90        :        :                   :         : 2         :                
 GND*                         : 91        :        :                   :         : 2         :                
 GND*                         : 92        :        :                   :         : 2         :                
@@ -162,7 +162,7 @@ GNDIO                        : 93        : gnd    :                   :         
 VCCIO2                       : 94        : power  :                   : 3.3V    : 2         :                
 GND*                         : 95        :        :                   :         : 2         :                
 GND*                         : 96        :        :                   :         : 2         :                
-GND*                         : 97        :        :                   :         : 2         :                
+b[1]                         : 97        : input  : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : 98        :        :                   :         : 2         :                
-GND*                         : 99        :        :                   :         : 2         :                
-GND*                         : 100       :        :                   :         : 2         :                
+c[0]                         : 99        : output : 3.3-V LVTTL       :         : 2         : N              
+Bus[12]                      : 100       : bidir  : 3.3-V LVCMOS      :         : 2         : Y              

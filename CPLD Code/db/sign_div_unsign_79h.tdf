@@ -1,0 +1,88 @@
+--sign_div_unsign DEN_REPRESENTATION="SIGNED" DEN_WIDTH=16 LPM_PIPELINE=0 MAXIMIZE_SPEED=5 NUM_REPRESENTATION="SIGNED" NUM_WIDTH=16 SKIP_BITS=0 denominator numerator quotient remainder
+--VERSION_BEGIN 8.1 cbx_cycloneii 2008:05:19:10:57:37:SJ cbx_lpm_abs 2008:05:19:10:51:43:SJ cbx_lpm_add_sub 2008:05:19:10:49:01:SJ cbx_lpm_divide 2008:05:21:18:11:28:SJ cbx_mgl 2008:08:08:15:16:18:SJ cbx_stratix 2008:08:05:17:10:23:SJ cbx_stratixii 2008:08:07:13:54:47:SJ cbx_util_mgl 2008:07:18:09:58:54:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2008 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION alt_u_div_loe (denominator[15..0], numerator[15..0])
+RETURNS ( quotient[15..0], remainder[15..0]);
+FUNCTION add_sub_35c (cin, dataa[15..0], datab[15..0])
+RETURNS ( result[15..0]);
+FUNCTION add_sub_r0f (cin, dataa[15..0], datab[15..0])
+RETURNS ( result[15..0]);
+
+--synthesis_resources = lut 184 
+SUBDESIGN sign_div_unsign_79h
+( 
+	denominator[15..0]	:	input;
+	numerator[15..0]	:	input;
+	quotient[15..0]	:	output;
+	remainder[15..0]	:	output;
+) 
+VARIABLE 
+	divider : alt_u_div_loe;
+	adder : add_sub_35c;
+	compl_adder1 : add_sub_r0f;
+	compl_adder_4 : add_sub_r0f;
+	adder_out[15..0]	: WIRE;
+	den_choice[15..0]	: WIRE;
+	gnd_wire	: WIRE;
+	neg_num[15..0]	: WIRE;
+	neg_quot[15..0]	: WIRE;
+	norm_num[15..0]	: WIRE;
+	num_choice[15..0]	: WIRE;
+	pre_neg_den[15..0]	: WIRE;
+	pre_neg_quot[15..0]	: WIRE;
+	pre_quot[15..0]	: WIRE;
+	protect_quotient[15..0]	: WIRE;
+	protect_remainder[15..0]	: WIRE;
+	q_is_neg	: WIRE;
+	vcc_wire	: WIRE;
+	zero_wire[15..0]	: WIRE;
+	zero_wire_3w[15..0]	: WIRE;
+
+BEGIN 
+	divider.denominator[] = den_choice[];
+	divider.numerator[] = norm_num[];
+	adder.cin = gnd_wire;
+	adder.dataa[] = den_choice[];
+	adder.datab[] = protect_remainder[];
+	compl_adder1.cin = vcc_wire;
+	compl_adder1.dataa[] = (! denominator[]);
+	compl_adder1.datab[] = zero_wire[];
+	compl_adder_4.cin = vcc_wire;
+	compl_adder_4.dataa[] = (! pre_quot[]);
+	compl_adder_4.datab[] = zero_wire_3w[];
+	adder_out[] = adder.result[];
+	den_choice[] = ((denominator[] & (! denominator[15..15])) # (pre_neg_den[] & denominator[15..15]));
+	gnd_wire = B"0";
+	neg_num[] = (! num_choice[]);
+	neg_quot[] = (! protect_quotient[]);
+	norm_num[] = ((num_choice[] & (! num_choice[15..15])) # (neg_num[] & num_choice[15..15]));
+	num_choice[] = numerator[];
+	pre_neg_den[] = compl_adder1.result[];
+	pre_neg_quot[] = compl_adder_4.result[];
+	pre_quot[] = ((protect_quotient[] & (! num_choice[15..15])) # (neg_quot[] & num_choice[15..15]));
+	protect_quotient[] = divider.quotient[];
+	protect_remainder[] = divider.remainder[];
+	q_is_neg = denominator[15..15];
+	quotient[] = ((pre_quot[] & (! q_is_neg)) # (pre_neg_quot[] & q_is_neg));
+	remainder[] = ((protect_remainder[] & (! num_choice[15..15])) # (adder_out[] & num_choice[15..15]));
+	vcc_wire = B"1";
+	zero_wire[] = B"0000000000000000";
+	zero_wire_3w[] = B"0000000000000000";
+END;
+--VALID FILE
